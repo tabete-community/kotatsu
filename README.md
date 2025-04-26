@@ -1,12 +1,10 @@
-# Tabete
-
 👋 Why “Tabete”?
 
 It’s a fusion of our team’s initials and a subtle nod to a Japanese expression.
 
 We believe in openness and transparency. Every idea, solution, and opportunity is openly explored and shared.
 
-te (from “tabete” 食べて): In Japanese, “tabete” means “please eat.” It’s an invitation, a welcoming gesture. By including this element, we’re extending a metaphorical invitation for you to join us at the table, to partake in the feast of ideas, creativity, and collaboration we offer.
+"tabete" (食べて) means “please eat” in Japanese. It’s an invitation, a welcoming gesture. By including this element, we’re extending a metaphorical invitation for you to join us at the table, to partake in the feast of ideas, creativity, and collaboration we offer.
 
 In essence, Tabete represents an open invitation to collaborate, to nourish ideas, and to grow together. It’s about feeding innovation, fuelling connections, and making sure that everyone has a place — at our table and on our team.
 
