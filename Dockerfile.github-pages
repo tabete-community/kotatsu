@@ -1,0 +1,19 @@
+# Dockerfile.github-pages
+FROM ruby:3.3-slim
+
+# 1. Bring in build tools only for gem compilation
+RUN apt-get update && apt-get install -y \
+      build-essential git \
+  && rm -rf /var/lib/apt/lists/*
+
+# 2. Install the exact tool-chain GitHub Pages uses
+RUN gem install --no-document github-pages
+
+# 3. Create a non-root user so Jekyll can write _site/ as you
+RUN useradd -ms /bin/bash jekyll
+USER jekyll
+WORKDIR /site
+
+# 4. Entrypoint makes the container behave like the `jekyll` CLI
+ENTRYPOINT ["bundle", "exec", "jekyll"]
+CMD ["--help"]
