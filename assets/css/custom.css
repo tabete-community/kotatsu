@@ -1,0 +1,11 @@
+/* paragraph that kramdown wraps around the <img> */
+.brand-wrapper {
+  float: right;            /* push the block to the far-right */
+  margin: 0 0 1rem 1.5rem; /* space: top-0  right-0 bottom-1rem  left-1.5rem */
+}
+
+/* logo sizing (adjust as needed) */
+.brand-mark {
+  width: 96px;             /* fixed width keeps layout predictable */
+  height: auto;
+}
