@@ -1,4 +1,11 @@
-👋 Why “Tabete”?
+
+👋
+
+## Tabete
+
+<p class="brand-wrapper">
+  <img src="{{ site.baseurl }}/assets/img/tabete.png" alt="Tabete" class="brand-mark">
+</p>
 
 It’s a fusion of our team’s initials and a subtle nod to a Japanese expression.
 
@@ -9,6 +16,10 @@ We believe in openness and transparency. Every idea, solution, and opportunity i
 In essence, Tabete represents an open invitation to collaborate, to nourish ideas, and to grow together. It’s about feeding innovation, fuelling connections, and making sure that everyone has a place — at our table and on our team.
 
 ## Kotatsu
+
+<p class="brand-wrapper">
+  <img src="{{ site.baseurl }}/assets/img/kotatsu.png" alt="Kotatsu" class="brand-mark">
+</p>
 
 A kotatsu is a traditional Japanese heated table, a place where people gather to share warmth, meals, and conversations. It’s a symbol of comfort, connection, and togetherness.
 
