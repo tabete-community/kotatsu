@@ -30,7 +30,7 @@ image:
 	docker build -t $(IMAGE) -f $(DOCKERFILE) .
 
 ## Live-preview the site exactly like GitHub Pages
-serve: image
+serve: build
 	@echo "▶ Starting local GitHub Pages preview on port $(PORT)…"
 	docker run --rm \
 		-p $(PORT):$(PORT) \
