@@ -3,3 +3,8 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 title:  "Tabete"
 description: Tabete is an open invitation to pull up a seat at our kotatsu-style table and feast on creativity, collaboration, and transparency.
+
+collections:
+  pages:
+    output: true
+    permalink: /:name/
