@@ -21,3 +21,24 @@ ul li {
   margin: .25rem 0;            /* breathe between items */
   line-height: 1.45;           /* same rhythm as body text */
 }
+
+/* top navigation bar */
+#top-nav {
+  font-size: 0.95rem;
+  margin: 0 0 1.5rem 0;
+  text-align: right;          /* aligns to the right edge of the white card */
+}
+
+#top-nav a {
+  color: #c33;                /* Tactile link red */
+  text-decoration: none;
+}
+
+#top-nav a:hover {
+  text-decoration: underline;
+}
+
+#top-nav .sep {
+  margin: 0 .4rem;
+  color: #999;
+}

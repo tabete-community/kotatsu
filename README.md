@@ -1,6 +1,3 @@
-
-👋
-
 ## Tabete
 
 <p class="brand-wrapper">
@@ -27,20 +24,20 @@ In the spirit of Tabete, **Kotatsu represents our shared space** — a welcoming
 
 Here, at our Kotatsu, we invite you to join us in sharing the feast of innovation and collaboration. It’s a place where everyone has a seat, and every voice is valued. Together, let’s create something meaningful and impactful.
 
-## Irori
+## Shichirin
 
 <p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/irori.png" alt="Irori" class="brand-mark">
+  <img src="{{ site.baseurl }}/assets/img/shichirin.png" alt="Shichirin" class="brand-mark">
 </p>
 
-An **irori** (いろり, 囲炉裏) is the sunken hearth found at the centre of older Japanese homes.
-It’s where meals are simmered, tea is brewed, tools are forged, and stories are traded long after the flames fade to embers.
+A **shichirin (しちりん, 七輪)** is a compact charcoal grill you break out for yakitori,
+roasted sweet‑potatoes, or late‑night balcony barbecues. You fire it up only
+when needed, share the sizzle, then let the coals cool.
 
-In the Tabete Community, **Irori is our creative forge** – a place where we
-prototype wild ideas before they’re “production-ready”, refine skills side-by-side
-through pair-coding, sketching, hacking or soldering, and keep the communal fire
-burning by sharing knowledge as soon as it sparks.
+Inside the Tabete Community, **Shichirin is our pop‑up test kitchen** – the space
+for rapid prototypes and quick experiments. We spark an idea, grill it together
+while it’s hot, taste, tweak, and move on.
 
----
+Pull up your skewer, throw something on the grill, and let’s see what flavours
+we invent next.
 
-Welcome to sit down with us. Pull up a cushion at the hearth, add your own fuel to the flames, and help shape whatever we build next.
