@@ -9,7 +9,7 @@ layout: default
 ## Playbook
 
 <p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/playbook.png" alt="Playbook" class="brand-mark">
+  <img src="{{ site.baseurl }}/assets/img/playbook_ico.png" alt="Playbook" class="brand-mark">
 </p>
 
 Our playbook is just enough structure to keep us intentional. We’re not fans of heavyweight rulebooks, yet we know that having no guard‑rails at all breeds inertia and complacency - it’s too easy to slip back into old habits and only see what is right in front of you.

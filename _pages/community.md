@@ -6,7 +6,7 @@ layout: default
 ---
 
 <p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/community.png" alt="Community" class="brand-mark">
+  <img src="{{ site.baseurl }}/assets/img/community_ico.png" alt="Community" class="brand-mark">
 </p>
 
 **Tabete** is a circle of friends, consultants and tinkerers who believe work is

@@ -1,7 +1,7 @@
 ## Tabete
 
 <p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/tabete.png" alt="Tabete" class="brand-mark">
+  <img src="{{ site.baseurl }}/assets/img/tabete_ico.png" alt="Tabete" class="brand-mark">
 </p>
 
 It’s a fusion of our team’s initials and a subtle nod to a Japanese expression.
@@ -15,7 +15,7 @@ In essence, **Tabete represents an open invitation** to collaborate, to nourish 
 ## Kotatsu
 
 <p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/kotatsu.png" alt="Kotatsu" class="brand-mark">
+  <img src="{{ site.baseurl }}/assets/img/kotatsu_ico.png" alt="Kotatsu" class="brand-mark">
 </p>
 
 A **kotatsu** (こたつ, 炬燵) is a traditional Japanese heated table, a place where people gather to share warmth, meals, and conversations. It’s a symbol of comfort, connection, and togetherness.
@@ -27,7 +27,7 @@ Here, at our Kotatsu, we invite you to join us in sharing the feast of innovatio
 ## Shichirin
 
 <p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/shichirin.png" alt="Shichirin" class="brand-mark">
+  <img src="{{ site.baseurl }}/assets/img/shichirin_ico.png" alt="Shichirin" class="brand-mark">
 </p>
 
 A **shichirin (しちりん, 七輪)** is a compact charcoal grill you break out for yakitori,
