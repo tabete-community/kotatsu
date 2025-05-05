@@ -17,5 +17,4 @@ The core crew is currently Thierry Lacour, Bosse Nyström and Albert Rigo
 
 ---
 
-Have a project you’d like to roast over our coals? Or maybe collaborate on something delicious? Let’s connect!
-[info@tabete.se](mailto:info@tabete.se) or @tabete‑community on GitHub
+Have a project you’d like to roast over our coals? Or maybe collaborate on something delicious? Let’s connect! info at tabete.se or @tabete‑community on GitHub
