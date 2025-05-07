@@ -21,6 +21,6 @@ We want to stay curious, generous, and steadily moving with intent.
 **Kotatsu After‑Work** (monthly)<br>
 Share warmth, food, and community updates with beverages. Friends to the community are welcome.
 
-**Shichirin food tasting** (weekly)<br>
+**Shichirin Skill‑Grill** (weekly)<br>
 Dive into each others work, take turns, focus on one per session -
 Swap expertise, solve tough problems, sketch prototypes, look into the future to figure out the "plan".

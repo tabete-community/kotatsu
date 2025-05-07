@@ -4,8 +4,6 @@
   <img src="{{ site.baseurl }}/assets/img/tabete_ico.png" alt="Tabete" class="brand-mark">
 </p>
 
-It’s a fusion of our team’s initials and a subtle nod to a Japanese expression.
-
 We believe in openness and transparency. Every idea, solution, and opportunity is openly explored and shared.
 
 **Tabete** (たべて, 食べて) means “please eat” in Japanese. It’s an invitation, a welcoming gesture. By including this element, we’re extending a metaphorical invitation for you to join us at the table, to partake in the feast of ideas, creativity, and collaboration we offer.
@@ -20,7 +18,7 @@ In essence, **Tabete represents an open invitation** to collaborate, to nourish 
 
 A **kotatsu** (こたつ, 炬燵) is a traditional Japanese heated table, a place where people gather to share warmth, meals, and conversations. It’s a symbol of comfort, connection, and togetherness.
 
-In the spirit of Tabete, **Kotatsu represents our shared space** — a welcoming environment where ideas are exchanged, creativity is nurtured, and collaboration thrives. Just as a kotatsu brings people together, our platform is designed to foster a sense of community and belonging.
+In the spirit of Tabete, **Kotatsu represents our shared space**. A welcoming environment where ideas are exchanged, creativity is nurtured, and collaboration thrives. Just as a kotatsu brings people together, our platform is designed to foster a sense of community and belonging.
 
 Here, at our Kotatsu, we invite you to join us in sharing the feast of innovation and collaboration. It’s a place where everyone has a seat, and every voice is valued. Together, let’s create something meaningful and impactful.
 
