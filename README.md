@@ -8,7 +8,7 @@ We’re a circle of hands-on consultants who knows that sharing time together wi
 Having done regular check-ups with other consultants for many years, we've noticed a couple of things:
 
 **Osmosis is real.**<br/>
-Simply being around a group of peers lets ideas, perspectives and knowledge cross-pollinate. The conversations we have in our meetings or when one of us shows something they’ve done for their customer aren’t just theoretical; they inspire us to think practically about how to realise those ideas in my customer’s environment.
+Simply being around a group of peers lets ideas, perspectives and knowledge cross-pollinate. The conversations in our meetings or when one shows something they’ve done for their client aren’t just theoretical; they spark inspiration and encourage us to explore how to implement those ideas in our clients' environments.
 
 **A tether prevents tunnel vision.**<br/>
 Deep immersion with a client is useful, but it can blur objectivity. Regular check-ins with the community pull us out of the weeds, let us test assumptions with the group and help us spot root causes instead of normalising work-arounds.
