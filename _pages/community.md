@@ -1,5 +1,5 @@
 ---
-title: Tabete Community
+title: Community
 description: The people who keep the kotatsu warm and the shichirin sizzling.
 permalink: /community/
 layout: default
@@ -14,6 +14,7 @@ richer when it feels like an open table.
 
 The core crew is currently Thierry Lacour, Bosse Nyström and Albert Rigo
 
+Pull up your skewer, throw something on the grill, and let’s see what flavours we invent next.
 
 ---
 

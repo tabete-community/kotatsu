@@ -1,6 +1,6 @@
 ---
-title: Tabete Playbook
-description: Our playbook for keeping collaboration hot, focused, and deliciously informal.
+title: Playbook
+description: Our way of keeping collaboration hot, focused, and deliciously informal.
 permalink: /playbook/
 layout: default
 ---

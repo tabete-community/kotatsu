@@ -1,41 +1,17 @@
-## Tabete
+<!--
+Inspired by the [it takes a village](https://verifa.io/blog/the-verifa-community-it-takes-a-village/) blog post.
+-->
 
-<p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/tabete_ico.png" alt="Tabete" class="brand-mark">
-</p>
+## Why the Tabete Community exists?
 
-We believe in openness and transparency. Every idea, solution, and opportunity is openly explored and shared.
+We’re a circle of hands-on consultants who knows that sharing time together will make us better at our craft.
+Having done regular check-ups with other consultants for many years, we've noticed a couple of things:
 
-**Tabete** (たべて, 食べて) means “please eat” in Japanese. It’s an invitation, a welcoming gesture. By including this element, we’re extending a metaphorical invitation for you to join us at the table, to partake in the feast of ideas, creativity, and collaboration we offer.
+**Osmosis is real.**<br/>
+Simply being around a group of peers lets ideas, perspectives and knowledge cross-pollinate. The conversations we have in our meetings or when one of us shows something they’ve done for their customer aren’t just theoretical; they inspire us to think practically about how to realise those ideas in my customer’s environment.
 
-In essence, **Tabete represents an open invitation** to collaborate, to nourish ideas, and to grow together. It’s about feeding innovation, fuelling connections, and making sure that everyone has a place — at our table and on our team.
+**A tether prevents tunnel vision.**<br/>
+Deep immersion with a client is useful, but it can blur objectivity. Regular check-ins with the community pull us out of the weeds, let us test assumptions with the group and help us spot root causes instead of normalising work-arounds.
 
-## Kotatsu
-
-<p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/kotatsu_ico.png" alt="Kotatsu" class="brand-mark">
-</p>
-
-A **kotatsu** (こたつ, 炬燵) is a traditional Japanese heated table, a place where people gather to share warmth, meals, and conversations. It’s a symbol of comfort, connection, and togetherness.
-
-In the spirit of Tabete, **Kotatsu represents our shared space**. A welcoming environment where ideas are exchanged, creativity is nurtured, and collaboration thrives. Just as a kotatsu brings people together, our platform is designed to foster a sense of community and belonging.
-
-Here, at our Kotatsu, we invite you to join us in sharing the feast of innovation and collaboration. It’s a place where everyone has a seat, and every voice is valued. Together, let’s create something meaningful and impactful.
-
-## Shichirin
-
-<p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/shichirin_ico.png" alt="Shichirin" class="brand-mark">
-</p>
-
-A **shichirin (しちりん, 七輪)** is a compact charcoal grill you break out for yakitori,
-roasted sweet‑potatoes, or late‑night balcony barbecues. You fire it up only
-when needed, share the sizzle, then let the coals cool.
-
-Inside the Tabete Community, **Shichirin is our pop‑up test kitchen** – the space
-for rapid prototypes and quick experiments. We spark an idea, grill it together
-while it’s hot, taste, tweak, and move on.
-
-Pull up your skewer, throw something on the grill, and let’s see what flavours
-we invent next.
-
+**Hire one, get a team.**<br/>
+When you invite one of us into your organisation, you’re not hiring a lone consultant - you’re gaining the reach, ideas, and curiosity of the entire Tabete Community.
