@@ -2,7 +2,7 @@
 Inspired by the [it takes a village](https://verifa.io/blog/the-verifa-community-it-takes-a-village/) blog post.
 -->
 
-## Why the Tabete Community exists?
+## Why the Tabete Community exists
 
 We’re a circle of hands-on consultants who knows that sharing time together will make us better at our craft.
 Having done regular check-ups with other consultants for many years, we've noticed a couple of things:
