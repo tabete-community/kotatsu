@@ -1,3 +1,4 @@
+/* --------------------------------------------------------- */
 /* paragraph that kramdown wraps around the <img> */
 .brand-wrapper {
   float: right;            /* push the block to the far-right */
@@ -10,7 +11,7 @@
   height: auto;
 }
 
-/* --- makeover for feature lists under the brand sections --- */
+/* makeover for feature lists under the brand sections */
 ul {
   margin: 0 0 1rem 0;          /* tighten top-space, keep bottom gap */
   padding-left: 1.25rem;       /* pull bullets in line with text */
@@ -22,6 +23,7 @@ ul li {
   line-height: 1.45;           /* same rhythm as body text */
 }
 
+/* --------------------------------------------------------- */
 /* top navigation bar */
 #top-nav {
   font-size: 0.95rem;
