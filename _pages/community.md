@@ -12,8 +12,12 @@ layout: default
 **Tabete** is a circle of friends, consultants and tinkerers who believe work is
 richer when it feels like an open table.
 
-The current crew is
-Albert Rigo, Bosse Nyström, Christian Pendelton, PA Lundblad and Thierry Lacour.
+**The current crew** is<br>
+\- Albert Rigo<br>
+\- Bosse Nyström<br>
+\- Christian Pendelton<br>
+\- PA Lundblad<br>
+\- Thierry Lacour.
 
 Pull up your skewer, throw something on the grill, and let’s see what flavours we invent next.
 
