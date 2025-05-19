@@ -24,3 +24,19 @@ Share warmth, food, and community updates with beverages. Friends to the communi
 **Shichirin Skill‑Grill** (weekly)<br>
 Dive into each others work, take turns, focus on one per session -
 Swap expertise, solve tough problems, sketch prototypes, look into the future to figure out the "plan".
+
+## Ground rules
+
+**Office**<br>
+\- Everyone gets a desk<br>
+\- Tabete provides a filled fridge
+
+**Making decisions**<br>
+\- Ask two people in a public setting (discord, etc) - ask those that you think might not agree<br>
+\- For major decisions (like a new member), then everyone needs to say yes
+
+**Tooling**<br>
+\- Notion for docs<br>
+\- Github for webpage<br>
+\- Discord for chats<br>
+\- We should probably have a place for a backlog
