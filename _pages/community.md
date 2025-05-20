@@ -17,10 +17,13 @@ richer when it feels like an open table.
 \- Bosse Nyström<br>
 \- Christian Pendelton<br>
 \- PA Lundblad<br>
-\- Thierry Lacour.
+\- Thierry Lacour
 
-Pull up your skewer, throw something on the grill, and let’s see what flavours we invent next.
+Pull up your skewer, throw something on the grill, and let's see what flavours we invent next.
 
 ---
 
-Have a project you’d like to roast over our coals? Or maybe collaborate on something delicious? Let’s connect! info at tabete.se or @tabete‑community on GitHub
+Have a project you'd like to roast over our coals?
+Or maybe collaborate on something delicious?
+Let's connect!
+Info at tabete.se or @tabete‑community on GitHub
