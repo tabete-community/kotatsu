@@ -1,5 +1,5 @@
 # ──────────────────────────────────────────────────────────────
-#  GitHub Pages local preview via Docker — zero host installs
+#  GitHub Pages local preview via Docker - zero host installs
 # ──────────────────────────────────────────────────────────────
 #
 #  Workflow
@@ -59,10 +59,10 @@ shell: image
 		$(IMAGE) /bin/bash
 
 # --------------------------------------------------------------------
-#  CI smoke-test: build inside the container and fail if it can’t
+#  CI smoke-test: build inside the container and fail if it can't
 # --------------------------------------------------------------------
 test: build
-	@echo "▶ CI smoke-test — building inside container …"
+	@echo "▶ CI smoke-test - building inside container …"
 	@docker run --rm \
 		--entrypoint bash \
 		-v $(PWD):/site \

@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+
+{% assign profile = site.data.authors[page.author_id] %}
+<h1>{{ profile.name }}</h1>
+<p>
+  {% if profile.linkedin %}
+  <a href="{{ profile.linkedin }}" rel="noopener">
+    <img src="{{ '/assets/img/li-in-bug.png' | relative_url }}" alt="LinkedIn" class="social-icon" style="height: 25px;">
+  </a>
+{% endif %}
+{% if profile.github %}
+  <a href="{{ profile.github }}" rel="noopener">
+    <img src="{{ '/assets/img/github-mark.png' | relative_url }}" alt="GitHub" class="social-icon" style="height: 25px;">
+  </a>
+{% endif %}
+</p>
+
+<p>{{ content }}</p>
+
+{% assign authored_posts = site.posts | where:"author", page.author_id %}
+{% if authored_posts == empty %}
+  <p>No posts yet.</p>
+{% else %}
+  <h2>Posts</h2>
+  {% for post in authored_posts %}
+  <article class="post-card">
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <small>{{ post.date | date: "%-d %b %Y" }}</small>
+
+    <a class="thumb" href="{{ post.url | relative_url }}">
+      {% if post.banner %}
+        <img src="{{ post.banner | relative_url }}" alt="{{ post.title }} thumbnail">
+      {% endif %}
+    </a>
+  </article>
+  {% endfor %}
+{% endif %}
