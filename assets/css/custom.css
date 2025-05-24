@@ -1,26 +1,40 @@
 /* --------------------------------------------------------- */
 /* paragraph that kramdown wraps around the <img> */
 .brand-wrapper {
-  float: right;            /* push the block to the far-right */
-  margin: 0 0 1rem 1.5rem; /* space: top-0  right-0 bottom-1rem  left-1.5rem */
+  float: right;
+  margin: 0 0 1rem 1.5rem;
 }
 
 /* logo sizing (adjust as needed) */
 .brand-mark {
-  width: 96px;             /* fixed width keeps layout predictable */
+  width: 96px;
   height: auto;
 }
 
-/* makeover for feature lists under the brand sections */
+/* --------------------------------------------------------- */
+/* lists */
 ul {
-  margin: 0 0 1rem 0;          /* tighten top-space, keep bottom gap */
-  padding-left: 1.25rem;       /* pull bullets in line with text */
-  list-style: square;            /* normal round bullets (can swap to 'square') */
+  margin: 0 0 1rem 0;
+  padding-left: 1.25rem;
 }
 
 ul li {
-  margin: .25rem 0;            /* breathe between items */
-  line-height: 1.45;           /* same rhythm as body text */
+  list-style: square;
+  padding-left: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------- */
+/* Crew section */
+.crew {
+  padding: 0;
+}
+
+.crew li {
+  list-style: none;
+  margin: 0 0 0 1rem;
+  padding: 0rem;
 }
 
 /* --------------------------------------------------------- */
@@ -28,11 +42,11 @@ ul li {
 #top-nav {
   font-size: 0.95rem;
   margin: 0 0 1.5rem 0;
-  text-align: right;          /* aligns to the right edge of the white card */
+  text-align: right;
 }
 
 #top-nav a {
-  color: #c33;                /* Tactile link red */
+  color: #c33;
   text-decoration: none;
 }
 
@@ -43,4 +57,52 @@ ul li {
 #top-nav .sep {
   margin: 0 .4rem;
   color: #999;
+}
+
+/* --------------------------------------------------------- */
+/* banners for blog posts */
+.post-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: .5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* thumbnail on the blog list */
+.post-card {
+  margin: 2rem 0;
+}
+.post-card .thumb img {
+  width: 100%;
+  max-height: 120px;
+  object-fit: cover;
+  border-radius: .5rem;
+  display: block;
+}
+.post-card h3 {
+  margin: .8rem 0 .4rem;
+}
+
+/* two–column layout on wide screens */
+.blog-index {
+  display: flex;
+  gap: 2rem;
+}
+
+/* tag column */
+.blog-tags {
+  flex: 0 0 220px;
+  margin-left: auto;
+  font-size: .9rem;
+}
+
+/* post column fills the rest */
+.blog-list {
+  flex: 1 1 60ch;
+}
+
+/* keep it single-column on small screens */
+@media(max-width:800px){
+  .blog-index   { flex-direction:column; }
+  .blog-tags    { margin-left:0; }
 }

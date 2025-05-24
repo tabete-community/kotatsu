@@ -1,0 +1,17 @@
+albert:
+  name: Albert Rigo
+  linkedin: https://www.linkedin.com/in/albertrigo/
+  github: https://github.com/kvarak
+bosse:
+  name: Bosse Nyström
+  linkedin: https://www.linkedin.com/in/bossenystrom/
+christian:
+  name: Christian Pendleton
+  linkedin: https://www.linkedin.com/in/christian-pendleton/
+pa:
+  name: PA Lundblad
+  upcase: "PA"
+  linkedin: https://www.linkedin.com/in/per-anders-lundblad/
+thierry:
+  name: Thierry Lacour
+  linkedin: https://www.linkedin.com/in/thlac/

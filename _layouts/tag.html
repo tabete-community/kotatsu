@@ -1,0 +1,19 @@
+---
+layout: default
+description: ""
+---
+
+<ul class="post-list">
+  {%- for post in site.posts -%}
+    {%- if post.tags contains page.tag -%}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%Y-%m-%d" }}
+        </time>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
+
+<a href="{{ site.baseurl }}/blog/">← To Blogs</a>
