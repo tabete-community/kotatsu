@@ -27,3 +27,5 @@ If that sounds tasty, pull up a cushion, subscribe to the feed and keep an eye o
 
 &nbsp;
 / Albert, for the crew
+
+<!-- Photo by Min An from Pexels: https://www.pexels.com/photo/close-up-photo-of-man-cooking-meat-1482803/ -->
