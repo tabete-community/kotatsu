@@ -11,7 +11,6 @@ _site/
 ########################################
 .bundle/
 vendor/bundle/
-Gemfile.lock
 
 ########################################
 # Node / front-end tooling (optional)
