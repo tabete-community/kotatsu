@@ -10,11 +10,18 @@ define HELP_TEXT
 #    make clean      # remove ./_site
 #
 #  The image is rebuilt every time (cheap: Docker layer cache).
+#
+#  Using Podman instead of Docker?
+#    make DOCKER=podman …
+#
+#  Example:
+#    make serve DOCKER=podman
 # ──────────────────────────────────────────────────────────────
 endef
 
 # ── Configurable knobs ────────────────────────────────────────
 IMAGE      ?= gh-pages:latest
+DOCKER	   ?= docker
 DOCKERFILE ?= Dockerfile.github-pages
 PORT       ?= 4000
 SITE_DIR   ?= _site
@@ -35,12 +42,12 @@ help: ## Show this help message
 ## (Re)build the Docker image (always)
 image:
 	@echo "▶ Building container $(IMAGE)…"
-	docker build -t $(IMAGE) -f $(DOCKERFILE) .
+	$(DOCKER) build -t $(IMAGE) -f $(DOCKERFILE) .
 
 ## Live-preview the site exactly like GitHub Pages
 serve: build
 	@echo "▶ Starting local GitHub Pages preview on port $(PORT)…"
-	docker run --rm \
+	$(DOCKER) run --rm \
 		-p $(PORT):$(PORT) \
 		-v $(PWD):/site \
 		-u $(USER_ID):$(GROUP_ID) \
@@ -50,7 +57,7 @@ serve: build
 ## Generate static HTML in ./$(SITE_DIR)
 build: image
 	@echo "▶ Building static site into $(SITE_DIR)…"
-	docker run --rm \
+	$(DOCKER) run --rm \
 		-v $(PWD):/site \
 		-u $(USER_ID):$(GROUP_ID) \
 		$(IMAGE) build --future
@@ -61,7 +68,7 @@ clean:
 
 ## Open an interactive shell inside the container (for debugging)
 shell: image
-	docker run --rm -it \
+	$(DOCKER) run --rm -it \
 		-v $(PWD):/site \
 		-u $(USER_ID):$(GROUP_ID) \
 		$(IMAGE) /bin/bash
@@ -71,7 +78,7 @@ shell: image
 # --------------------------------------------------------------------
 test: build
 	@echo "▶ CI smoke-test - building inside container …"
-	@docker run --rm \
+	@$(DOCKER) run --rm \
 		--entrypoint bash \
 		-v $(PWD):/site \
 		-e PAGES_REPO_NWO=dummy/dummy \
