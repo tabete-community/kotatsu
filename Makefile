@@ -8,6 +8,8 @@ define HELP_TEXT
 #    make build      # write static site into ./_site
 #    make shell      # open an interactive shell in the container
 #    make clean      # remove ./_site
+#    make test       # quick test made for CI to build inside the container
+#    make lock       # update Gemfile.lock with current dependencies (might be needed after gem updates)
 #
 #  The image is rebuilt every time (cheap: Docker layer cache).
 #
@@ -44,6 +46,21 @@ image:
 	@echo "▶ Building container $(IMAGE)…"
 	$(DOCKER) build -t $(IMAGE) -f $(DOCKERFILE) .
 
+## Update Gemfile.lock with new dependencies
+lock: image
+	@echo "▶ Updating Gemfile.lock with new dependencies…"
+	$(DOCKER) run --rm \
+		--network=host \
+		--entrypoint /bin/bash \
+		-e BUNDLE_PATH=/tmp/bundle \
+		-e BUNDLE_APP_CONFIG=/tmp/bundle \
+		-e GEM_HOME=/tmp/bundle \
+		-v $(PWD):/site \
+		$(IMAGE) \
+		-c "bundle update && \
+				bundle install && \
+				bundle lock --add-platform x86_64-linux arm64-darwin-22"
+
 ## Live-preview the site exactly like GitHub Pages
 serve: build
 	@echo "▶ Starting local GitHub Pages preview on port $(PORT)…"
@@ -79,7 +96,7 @@ shell: image
 test: build
 	@echo "▶ CI smoke-test - building inside container …"
 	@$(DOCKER) run --rm \
-		--entrypoint bash \
+		--entrypoint /bin/bash \
 		-v $(PWD):/site \
 		-e PAGES_REPO_NWO=dummy/dummy \
 		-e JEKYLL_ENV=production \
@@ -87,7 +104,7 @@ test: build
 		$(IMAGE) \
 			-c "set -e; \
 					git config --global --add safe.directory /site; \
-					jekyll build --future -d /tmp/out; \
+					bundle exec jekyll build --future -d /tmp/out; \
 					if [ -f /tmp/out/index.html ]; then \
 								echo '✅ build OK'; \
 					else \
