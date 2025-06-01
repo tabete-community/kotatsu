@@ -1,3 +1,4 @@
+define HELP_TEXT
 # ──────────────────────────────────────────────────────────────
 #  GitHub Pages local preview via Docker - zero host installs
 # ──────────────────────────────────────────────────────────────
@@ -10,6 +11,7 @@
 #
 #  The image is rebuilt every time (cheap: Docker layer cache).
 # ──────────────────────────────────────────────────────────────
+endef
 
 # ── Configurable knobs ────────────────────────────────────────
 IMAGE      ?= gh-pages:latest
@@ -22,7 +24,13 @@ USER_ID    := $(shell id -u)
 GROUP_ID   := $(shell id -g)
 
 # ── Targets ───────────────────────────────────────────────────
-.PHONY: image serve build clean shell
+.PHONY: help image serve build clean shell
+
+# make help the default target
+help: ## Show this help message
+	$(info $(HELP_TEXT))
+	@echo ""
+
 
 ## (Re)build the Docker image (always)
 image:
