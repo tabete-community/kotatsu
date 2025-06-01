@@ -86,9 +86,13 @@ clean:
 ## Open an interactive shell inside the container (for debugging)
 shell: image
 	$(DOCKER) run --rm -it \
+		--network=host \
+		--entrypoint /bin/bash \
+		-v /etc/group:/etc/group \
+		-v /etc/passwd:/etc/passwd \
 		-v $(PWD):/site \
 		-u $(USER_ID):$(GROUP_ID) \
-		$(IMAGE) /bin/bash
+		$(IMAGE)
 
 # --------------------------------------------------------------------
 #  CI smoke-test: build inside the container and fail if it can't
