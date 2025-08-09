@@ -9,8 +9,7 @@ layout: default
   <img src="{{ site.baseurl }}/assets/img/community_ico.png" alt="Community" class="brand-mark">
 </p>
 
-**Tabete** is a circle of friends, consultants and tinkerers who believe work is
-richer when it feels like an open table.
+**Tabete** is a circle of consultants and friends who believe work is richer when it feels like an open table.
 
 <ul class="crew">
 {% for author in site.data.authors %}
@@ -18,11 +17,9 @@ richer when it feels like an open table.
 {% endfor %}
 </ul>
 
-Pull up your skewer, throw something on the grill and let's see what flavours we invent next.
-
 ---
 
-Have a project you'd like to roast over our coals?
-Or maybe collaborate on something delicious?
+Have a project you'd like to bring to the table?
+Or maybe collaborate on a tasty idea?
 Let's connect!
 Info at tabete.se or @tabete‑community on GitHub
