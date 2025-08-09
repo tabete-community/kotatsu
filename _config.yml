@@ -5,7 +5,7 @@ plugins:
 - jekyll-seo-tag
 
 title:  "Tabete"
-description: Tabete is an open invitation to pull up a seat at our table and feast on creativity, collaboration and transparency.
+description: Tabete is a community of consultants collaborating and sharing ideas. Pull up a seat at our table!
 
 collections:
   pages:

@@ -4,12 +4,12 @@ Inspired by the [it takes a village](https://verifa.io/blog/the-verifa-community
 
 ## Why Tabete exists
 
-We're a circle of hands-on consultants who know that sharing time together will make us better at our craft.
-Having done regular check-ups with other consultants for many years, we've noticed a couple of things:
+We're a circle of software development consultants who know that sharing time together will hone our craft.
+Having met regularly to talk shop for many years, we've noticed a couple of things:
 
 ### Osmosis is real
 
-Simply being around a group of peers lets ideas, perspectives and knowledge cross-pollinate. The conversations in our meetings or when one shows something they've done for their client aren't just theoretical; they spark inspiration and encourage us to explore how to implement those ideas in our own clients' environments.
+Simply being around peers lets ideas, perspectives and knowledge cross-pollinate. The conversations and showcases in our meetings aren't just theoretical; they spark inspiration and encourage us to explore implementing fresh ideas in our own clients' environments.
 
 ### A tether prevents tunnel vision
 
@@ -17,4 +17,4 @@ Deep immersion with a client is useful, but it can blur objectivity. Regular che
 
 ### Hire one, get a team
 
-When you invite one of us into your organisation, you're not hiring a lone consultant - you're gaining the reach, ideas and curiosity of the entire Tabete Community.
+When bringing a Tabete consultant on board, you're not getting a lone consultant - you're gaining the reach, ideas and experience of the entire Tabete Community.
