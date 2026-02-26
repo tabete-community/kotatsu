@@ -1,5 +1,6 @@
 ---
-title: Crew
+title: crew
+header_image: assets/img/mrtabete/pants.png
 description: The people who keep the kotatsu warm and the shichirin sizzling.
 permalink: /crew/
 layout: default

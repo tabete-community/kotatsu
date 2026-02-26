@@ -13,6 +13,13 @@
           {% assign profile = site.data.authors[page.author_id] %}
           {% if profile.upcase %}
             <h1>{{ profile.upcase | upcase }}</h1>
+          {% elsif page.url == "/" and site.logo %}
+            <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}" style="max-width: 200px; height: auto;">
+          {% elsif page.header_image or site.header_image %}
+            <h1>
+              <img src="{{ page.header_image | default: site.header_image | relative_url }}" alt="" style="max-height: 1.2em; vertical-align: middle; margin-right: 0.5rem;">
+              {{ page.title | default: site.title }}
+            </h1>
           {% else %}
             <h1>{{ page.title | default: site.title }}</h1>
           {% endif %}
