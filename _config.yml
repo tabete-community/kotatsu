@@ -4,7 +4,8 @@ plugins:
 - jekyll-feed
 - jekyll-seo-tag
 
-title:  "Tabete"
+title:  "tabete"
+header_image: assets/img/mrtabete/smile.png
 description: Tabete is a community of consultants collaborating and sharing ideas. Pull up a seat at our table!
 
 collections:

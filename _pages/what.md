@@ -1,5 +1,6 @@
 ---
-title: Concepts
+title: concepts
+header_image: assets/img/mrtabete/sit.png
 description: The settings that frame our conversations and craft.
 permalink: /what/
 layout: default

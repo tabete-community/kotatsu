@@ -1,5 +1,6 @@
 ---
-title: Playbook
+title: playbook
+header_image: assets/img/mrtabete/transparent.png
 description: Our way of keeping collaboration hot, focused and tastefully informal.
 permalink: /playbook/
 layout: default

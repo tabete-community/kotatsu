@@ -4,7 +4,7 @@ define HELP_TEXT
 # ──────────────────────────────────────────────────────────────
 #
 #  Workflow
-#    make serve      # live-preview at http://localhost:4000
+#    make serve      # live-preview at http://localhost:4001
 #    make build      # write static site into ./_site
 #    make shell      # open an interactive shell in the container
 #    make clean      # remove ./_site
@@ -25,7 +25,7 @@ endef
 IMAGE      ?= gh-pages:latest
 DOCKER	   ?= docker
 DOCKERFILE ?= Dockerfile.github-pages
-PORT       ?= 4000
+PORT       ?= 4001
 SITE_DIR   ?= _site
 
 # Current user IDs so generated files are owned by you
