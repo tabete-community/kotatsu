@@ -10,7 +10,7 @@ layout: default
 ## Playbook
 
 <p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/playbook_ico.png" alt="Playbook" class="brand-mark">
+  <img src="{{ site.baseurl }}/assets/img/mrtabete/laptop.png" alt="Playbook" class="brand-mark">
 </p>
 
 Our playbook is just enough structure to keep us intentional.
