@@ -9,7 +9,11 @@ tag: [tabete, kotatsu, shichirin]
 <div class="blog-index">
 
   <main class="blog-list">
-    <h2>Posts</h2>
+
+    <p>
+      <img src="{{ site.baseurl }}/assets/img/mrtabete-wide/shout-text.png" alt="Posts" style="max-width: 120px;">
+    </p>
+
     {% for post in site.posts %}
       <article class="post-card">
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
