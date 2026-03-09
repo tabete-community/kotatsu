@@ -1,6 +1,5 @@
 ---
 title: blog & updates
-header_image: assets/img/mrtabete/wave.png
 description: Quick notes & stories from around the kotatsu.
 permalink: /blog/
 layout: default

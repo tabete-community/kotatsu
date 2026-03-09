@@ -1,11 +1,10 @@
 (function() {
-  // also used in what.md: chopsticks.png, inside.png, sit.png
-  // also used in playbook.md: laptop.png
   var mrtabeteImages = [
-    'angry.png', 'bruh.png', 'engarde.png', 'rice.png',
-    'flag.png', 'laptop.png', 'pants.png',
-    'smile.png', 'transparent.png', 'wave.png',
-    'chopsticks.png', 'inside.png', 'sit.png'
+    "angry.png", "flag.png", "laptop.png",
+    "bottle.png", "highstick.png", "pants.png", "sit.png",
+    "bruh.png", "hole-2.png", "rice.png", "wave.png",
+    "chopsticks.png", "hole.png", "run.png",
+    "fall.png", "inside.png", "shout.png"
   ];
 
   var randomImage = mrtabeteImages[Math.floor(Math.random() * mrtabeteImages.length)];

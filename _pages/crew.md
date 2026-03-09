@@ -1,13 +1,12 @@
 ---
 title: crew
-header_image: assets/img/mrtabete/pants.png
 description: The people who keep the kotatsu warm and the shichirin sizzling.
 permalink: /crew/
 layout: default
 ---
 
 <p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/mrtabete/engarde.png" alt="Community" class="brand-mark">
+  <img src="{{ site.baseurl }}/assets/img/mrtabete-wide/engarde.png" alt="Community" class="brand-mark">
 </p>
 
 **Tabete** is a circle of consultants and friends who believe work is richer when it feels like an open table.

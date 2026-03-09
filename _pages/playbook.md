@@ -1,6 +1,5 @@
 ---
 title: playbook
-header_image: assets/img/mrtabete/transparent.png
 description: Our way of keeping collaboration hot, focused and tastefully informal.
 permalink: /playbook/
 layout: default
@@ -9,16 +8,16 @@ layout: default
 
 ## Playbook
 
-<p class="brand-wrapper">
-  <img src="{{ site.baseurl }}/assets/img/mrtabete/laptop.png" alt="Playbook" class="brand-mark">
-</p>
-
 Our playbook is just enough structure to keep us intentional.
 We're not fans of heavyweight rulebooks, yet we know that having no guard rails breeds inertia and complacency - it's too easy to slip back into old habits and only see what is right in front of you.
 
 We want to stay steadily moving with intent.
 
 ## Gatherings
+
+<p class="brand-wrapper">
+  <img src="{{ site.baseurl }}/assets/img/mrtabete-wide/discuss.png" alt="Playbook" class="brand-mark">
+</p>
 
 ### Kotatsu
 
