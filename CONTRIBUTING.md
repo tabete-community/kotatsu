@@ -1,6 +1,4 @@
-
-How to contribute
-=================
+# How to contribute
 
 Contributions are most welcome. Read the following guide to get to know what you need to know.
 

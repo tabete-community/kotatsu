@@ -1,0 +1,46 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/.github/**",
+    "**/.vscode/**",
+    "**/.cspell/**",
+    "**/logs/**",
+    "**/tmp/**",
+    "**/temp/**",
+    "**/_config.yml",
+    "**/vendor/**",
+    "_site/**",
+  ],
+  "files": [
+    "**/*.md",
+    "**/*.txt",
+    "_data/**/*.json",
+    "**/*.yml",
+    "**/*.yaml",
+    "**/LICENSE",
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "repo dictionary",
+      "path": "./.dict/repo.dictionary",
+    },
+  ],
+  "dictionaries": ["repo dictionary"],
+  "ignoreRegExpList": [
+    "{%[\\s\\S]*?%}", // ignore liquid tags
+    "{{[\\s\\S]*?}}", // ignore liquid variables
+    "```[\\s\\S]*?```", // ignore code blocks
+    "`[^`]*`", // ignore inline code
+    "\\$\\([^)]*\\)", // ignore shell command substitutions
+    "^\\s*(linkedin|x):[\\s\\S]+$", // ignore linkedin and x keys in YAML
+    "^\\s*(image):[\\s\\S]+$", // ignore image keys in YAML
+
+    // If we omit this, YAML key-value pairs get flagged a lot, with stuff that doesnt look like words and should be ignored (as opposed to added in the dictionary)
+    // If we include this, some actual words in YAML files might get ignored.
+    // So for now, we are omitting this rule. You can ignore words in the individual files by adding `# cspell:ignore <space-separated-word-list>` in the front matter if needed.
+    //"^\\s*[\\w-]+:\\s*.+$", // ignore YAML key-value pairs (only at line start)
+  ],
+}

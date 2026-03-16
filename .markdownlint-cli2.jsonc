@@ -1,0 +1,26 @@
+{
+  // Configuration for markdownlint-cli2
+  "globs": [
+    "**/*.md",
+    "!node_modules/**",
+    "!**/temp/**",
+    "!**/vendor/**",
+    "!_site/**",
+  ],
+  "config": {
+    "MD001": false,
+    "MD004": { "style": "dash" },
+    "MD012": false,
+    "MD013": false,
+    "MD024": { "siblings_only": true }, // Rule only apply to siblings (same parent)
+    "MD025": false,
+    "MD026": false,
+    "MD033": false,
+    "MD034": false,
+    "MD036": false,
+    //"MD041": { "allow_preamble": true, "level": 2 },
+    "MD038": false,
+    "MD041": false,
+    "MD042": false,
+  },
+}

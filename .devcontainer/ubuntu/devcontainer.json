@@ -1,0 +1,37 @@
+{
+  "name": "Ubuntu — from Noble image",
+  "image": "mcr.microsoft.com/devcontainers/base:noble",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/npm-packages:1": {
+      "packages": ["cspell", "markdownlint-cli2", "prettier"]
+    },
+    "ghcr.io/devcontainers/features/ruby:1": {
+      "version": "3.3"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "streetsidesoftware.code-spell-checker",
+        "esbenp.prettier-vscode",
+        "Shopify.theme-check-vscode",
+        "mhutchie.git-graph",
+        "mk12.better-git-line-blame"
+      ]
+    }
+  },
+
+  "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "mounts": [
+    "source=${localEnv:HOME},target=/localhome,type=bind,consistency=cached"
+  ],
+  "forwardPorts": [4000],
+  "remoteEnv": {
+    "JEKYLL_ENV": "development",
+    "GH_TOKEN": "${localEnv:GH_TOKEN}"
+  }
+}

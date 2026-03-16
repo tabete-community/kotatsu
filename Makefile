@@ -68,7 +68,7 @@ serve: build
 		-p $(PORT):$(PORT) \
 		-v $(PWD):/site \
 		-u $(USER_ID):$(GROUP_ID) \
-		$(IMAGE) serve --watch --drafts --future \
+		$(IMAGE) serve --source src --watch --drafts --future \
 			--host 0.0.0.0 --port $(PORT)
 
 ## Generate static HTML in ./$(SITE_DIR)
@@ -77,7 +77,7 @@ build: image
 	$(DOCKER) run --rm \
 		-v $(PWD):/site \
 		-u $(USER_ID):$(GROUP_ID) \
-		$(IMAGE) build --future
+		$(IMAGE) build --source src --future
 
 ## Remove generated site output
 clean:
@@ -108,7 +108,7 @@ test: build
 		$(IMAGE) \
 			-c "set -e; \
 					git config --global --add safe.directory /site; \
-					bundle exec jekyll build --future -d /tmp/out; \
+					bundle exec jekyll build --source src --future -d /tmp/out; \
 					if [ -f /tmp/out/index.html ]; then \
 								echo '✅ build OK'; \
 					else \

@@ -1,0 +1,44 @@
+name: PR to Ready
+# This workflow is designed to support teams that use of the GitHub CLI 'devx-cafe/gh-tt' extension
+# so they can safely include include PRs in the mix.
+#
+# The rationale is that GitHubs Agentic mode for Copilot relies on PRs both in spec-driven mode and Copilot reviews.
+#
+# This flow triggers on on PR approval and has the same effect on the PR's development branch as running
+# `gh tt deliver` would have on an issue branch:
+#
+# It collapses the commits in the PR's development branch into a single synthetic commit and pushes it to
+# a ready/* branch, so the ordinary 'ready.yml' flow can take over.
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Pull request number to deliver
+        required: true
+        type: number
+  pull_request_review:
+    types:
+      - submitted
+
+concurrency:
+  group: pr-to-ready-${{ github.event.pull_request.number || inputs.pr_number }}
+  cancel-in-progress: true
+
+jobs:
+  deliver-pr:
+    name: Deliver PR to ready/*
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.READY_PUSHER }}
+
+      - uses: lakruzz/workflows/actions/pr-to-ready@experimental
+        with:
+          token: ${{ secrets.READY_PUSHER }}

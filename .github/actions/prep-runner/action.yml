@@ -1,0 +1,43 @@
+name: Prep-runner
+description: Sets the GitHub workflow to do what we need
+
+inputs:
+  verify:
+    description: Script to run to verify the environment is set up correctly. If not provided, no verification will be done.
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - name: Mark checks as pending
+      if: ${{ inputs.verify }}
+      shell: bash
+      run: ${{ inputs.verify }} mark-pending
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: "24"
+
+    # Install npm packages required by .githooks/pre-commit
+    - name: Install linting and checker tools
+      shell: bash
+      run: npm install -g cspell markdownlint-cli2 @cspell/dict-da-dk prettier
+
+    # Install Ruby, Bundler and all gems from Gemfile.
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: "3.3"
+        bundler-cache: true # runs 'bundle install' and caches installed gems
+
+    # Configure Bundler to use the global gem path (installed in previous step)
+    - name: Configure Bundler
+      shell: bash
+      run: |
+        bundle config path vendor/bundle
+
+    - name: Verify environment
+      if: ${{ inputs.verify }}
+      shell: bash
+      run: ${{ inputs.verify }}

@@ -1,49 +1,27 @@
-########################################
-# GitHub Pages / Jekyll build artefacts
-########################################
-_site/
-.jekyll-cache/
-.sass-cache/
-.jekyll-metadata
+# General
+temp/
+default.code-workspace
 
-########################################
-# Ruby / Bundler
-########################################
-.bundle/
-vendor/bundle/
+# Ruby Gem
+*.gem
+.bundle
+**/vendor/bundle
 
-########################################
-# Node / front-end tooling (optional)
-########################################
-node_modules/
+# Node.js and NPM
+node_modules
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+package-lock.json
+codekit-config.json
 
-########################################
-# Editor / IDE droppings
-########################################
-.vscode/
-.idea/
-*.swp
-*.swo
-
-########################################
-# macOS and Linux noise
-########################################
+# macOS
 .DS_Store
-.AppleDouble
-.LSOverride
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
-########################################
-# Environment / secrets
-########################################
-.env
-.env.*
-*.pem
-*.key
+# Jekyll generated files
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
+_asset_bundler_cache
+_site
+
+# tt extension
+.tt_cache

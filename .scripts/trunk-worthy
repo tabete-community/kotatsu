@@ -1,0 +1,311 @@
+#!/bin/bash
+
+##################################################################################
+####                       RUNS CHECKS IN PARALLEL                            ####
+#### Supports up to three 'waves' of checks, where each wave runs in parallel #### 
+####        and the next wave only starts if the previous wave passed         ####
+##################################################################################
+
+# DEFINE CHECKS:
+#
+# To add a new check:
+#   1. Add "name" (single-word, lowercase-only) to CHECK_NAMES (or optionally CHECK_NAMES_2ND or CHECK_NAMES_3RD)
+#   2. Add the command to run in CHECK_COMMANDS[name]="command"
+#   3. Optionally add a display name in DISPLAY_NAMES[name]="Display Name". 
+#      If not defined it will capitalize the name from CHECK_NAMES for display purposes.
+#
+# GOOD TO KNOW:
+#
+#   💡 To disable a check: remove the name from CHECK_NAMES (or CHECK_NAMES_2ND or CHECK_NAMES_3RD)
+#      It doesn't need removal from CHECK_COMMANDS
+#   💡 Use a variant of this script (eg. contributor-done) as your 'pre-commit' hook.
+#   💡 When defining your commands, avoiud using parameters - let the configurations do their job.
+#      To create speicilized runs, defined them in your Rakefile, Makefile, or as npm scripts and just call them from here. 
+#      This keeps the logic of what to run for each check in one place and makes it easier to reuse in other contexts.
+#   💡 This scritp supports up to three 'waves'. Each wave will run all check defined in the same wave in parallel.
+#      Consequently jobs in same wave can not be dependant on each other, but you can use the waves to create dependencies. 
+#      For example you can run all linters and builds (independent) in wave 1 and then run stuff that depends on the derived 
+#      build output (e.g. link checkers, or unit tests) in wave 2.
+#   💡 This scritp will fail-fast. I will complete all check in a started wave, but it will not start a new succeeding wave
+#      if any of the checks in the previous wave failed.
+#   💡 Empty waves will not run, to deisbale awave you can uncomment it's definition, or simply leave it empty.
+#      both approaches will prevent the wave from running without needing to change any other logic in the script.
+#   💡 When the script is run in context of a GITHUB_RUNNER, it will set the commit status of each check to 'success' 
+#     or 'failure' as they complete.
+#   💡 The script suports a sub-command 'mark-pending' it is only valied when run in context of a GITHUB_RUNNER.
+#     It will set the commit status of each planned check (all waves) to 'pennding' 
+#     or 'failure' as they complete. In your GitHub Actions workflow you can run it as a separate step - as early as possible
+#     after the checkout - to mark all checks as pending before they run. 
+#     Example:
+#.    ---
+#     # Mark checks defined in 'trunk-worthy' as pending
+#      - name: Mark pending checks
+#        env:
+#          GH_TOKEN: ${{ github.token }}
+#        run: |
+#          .scripts/trunk-worthy mark-pending
+#     ---
+
+CHECK_NAMES=("cspell" "markdownlint" "prettier" "build")   # Checks to run in the first wave (required)
+CHECK_NAMES_2ND=("internallinks", "externallinks")   # 2nd wave of checks that only run if the first wave passes (optional)
+CHECK_NAMES_3RD=()   # 3rd wave of checks that only run if the 2nd wave passes (optional)
+
+# Mapping of names (above) to their respective commands
+declare -A CHECK_COMMANDS=(
+    [cspell]="cspell"
+    [markdownlint]="markdownlint-cli2"
+    [prettier]="prettier --check ."
+    [build]="bundle exec rake jekyll:build" 
+    [externallinks]="bundle exec rake proofer:check"
+    [internallinks]="bundle exec rake proofer:dev"
+)
+
+# Mapping for display names (optional) No entry means it will just capitalize the name from CHECK_NAMES
+declare -A DISPLAY_NAMES=(
+    [cspell]="Code Spell Checker"
+    [markdownlint]="Markdown Lint"
+    [prettier]="Prettier"
+    [build]="Jekyll Build"
+    [externallinks]="External links"
+    [internallinks]="Internal links"
+)
+
+####################################################
+####                 DANGER ZONE:               ####
+####     No need to edit below this point       ####
+####     unless you know what you're doing!     ####
+####################################################
+
+# Function to capitalize first letter
+capitalize() {
+    echo "$1" | sed 's/^./\U&/'
+}
+
+# Function to get display name for a check
+get_display_name() {
+    local name=$1
+    if [ -n "${DISPLAY_NAMES[$name]}" ]; then
+        echo "${DISPLAY_NAMES[$name]}"
+    else
+        capitalize "$name"
+    fi
+}
+
+# Function to mark all checks as pending in GitHub Actions
+mark_pending_statuses() {
+    gh ext list | grep "lakruzz/gh-set-status"  || gh extension install lakruzz/gh-set-status > /dev/null 2>&1 || true
+
+    for check in "${CHECK_NAMES[@]}"; do
+        gh set-status pending "$(get_display_name $check) check" "$check"
+    done
+    if [ "${#CHECK_NAMES_2ND[@]}" -gt 0 ]; then
+        for check in "${CHECK_NAMES_2ND[@]}"; do
+            gh set-status pending "$(get_display_name $check) check" "$check"
+        done
+    fi
+    if [ "${#CHECK_NAMES_3RD[@]}" -gt 0 ]; then
+        for check in "${CHECK_NAMES_3RD[@]}"; do
+            gh set-status pending "$(get_display_name $check) check" "$check"
+        done
+    fi    
+}
+
+# Function to start a check in the background
+run_check() {
+    local name=$1
+    
+    printf "   ⏳ $(get_display_name $name) check\n"
+    ((PROGRESS_COUNT++))
+    eval "${CHECK_COMMANDS[$name]}" > "${CHECK_OUT[$name]}" 2>&1 &
+    CHECK_PID[$name]=$!
+}
+
+# Function to wait for and capture exit status
+wait_check() {
+    local name=$1
+    
+    wait "${CHECK_PID[$name]}" || CHECK_STATUS[$name]=$?
+}
+
+# Function to print status line
+print_status() {
+    local name=$1
+    
+    if [ "${CHECK_STATUS[$name]}" -eq 0 ]; then
+        echo "   ✅ $(get_display_name $name) check"
+    else
+        echo "   ❌ $(get_display_name $name) check"
+    fi
+
+    # Be more verbose in GitHub Actions and set the status for each check
+    if [ "$GITHUB_ACTION_RUN" -eq 1 ]; then
+        gh ext list | grep "lakruzz/gh-set-status"  || gh extension install lakruzz/gh-set-status > /dev/null 2>&1 || true
+
+        if [ "${CHECK_STATUS[$name]}" -eq 0 ]; then
+            gh set-status success "$(get_display_name $name) check passed" "$name"
+            echo "✅ $(get_display_name $name) check passed" >> $GITHUB_STEP_SUMMARY
+        else
+            gh set-status failure "$(get_display_name $name) check failed" "$name"
+            echo "❌ $(get_display_name $name) check failed" >> $GITHUB_STEP_SUMMARY
+        fi
+    fi  
+}
+
+# Function to display error output
+show_error() {
+    local name=$1
+    
+    if [ "${CHECK_STATUS[$name]}" -ne 0 ]; then
+        echo "$(get_display_name $name) issues:"
+        cat "${CHECK_OUT[$name]}"
+        echo ""
+    fi
+    # Be more verbose in GitHub Actions and show check output in summary
+    if [ "$GITHUB_ACTION_RUN" -eq 1 ]; then
+        if [ "${CHECK_STATUS[$name]}" -ne 0 ]; then
+            echo "❌ $(get_display_name $name) check output:" >> $GITHUB_STEP_SUMMARY
+            cat "${CHECK_OUT[$name]}" >> $GITHUB_STEP_SUMMARY
+        fi
+    fi
+
+}
+
+# Function to run a phase of checks in parallel
+run_checks_phase() {
+    local -n check_array=$1
+    
+    # Start all checks in parallel
+    for check in "${check_array[@]}"; do
+        run_check "$check"
+    done
+
+    # Wait for all checks to complete
+    for check in "${check_array[@]}"; do
+        wait_check "$check"
+        if [ "${CHECK_STATUS[$check]}" -ne 0 ]; then
+            PASS=FALSE
+        fi
+    done
+
+    # Clear progress lines and replace with results
+    for ((i=0; i<PROGRESS_COUNT; i++)); do
+        tput cuu 1  # Move cursor up one line
+        tput el     # Clear line
+    done
+
+    # Print final status for each check
+    for check in "${check_array[@]}"; do
+        print_status "$check"
+    done
+}
+
+# Main execution
+if [[ -z "$GITHUB_REPOSITORY" || -z "$GITHUB_SHA" || -z "$GITHUB_ACTION" || -z "$GITHUB_RUN_ID" || -z "$GITHUB_SERVER_URL" ]]; then
+    GITHUB_ACTION_RUN=0
+else
+    GITHUB_ACTION_RUN=1
+fi
+
+SCRIPT_BASENAME="$(basename "$0")"
+
+SUBCOMMAND="$1"
+
+if [ -n "$SUBCOMMAND" ]; then
+    if [ "$SUBCOMMAND" != "mark-pending" ]; then
+        echo "❌ Unknown subcommand: $SUBCOMMAND"
+        echo ""
+        echo "Supported subcommand: mark-pending"
+        echo "Usage: $SCRIPT_BASENAME [mark-pending]"
+        echo "  The 'mark-pending' subcommand is used in GitHub Actions to mark"
+        echo "  all checks with status 'pending' before they run."
+        echo "  The subcommand will fail if run outside of GitHub Actions."
+        exit 1
+    fi
+
+    if [ "$GITHUB_ACTION_RUN" -ne 1 ]; then
+        echo "Subcommand 'mark-pending' is only valid in GitHub Actions runs"
+        exit 1
+    fi
+
+    mark_pending_statuses
+    exit 0
+fi
+
+PASS=TRUE
+
+# Create local temp directory for output capture
+TMPDIR=".tmp"
+if [ ! -d "$TMPDIR" ]; then
+    mkdir -p "$TMPDIR"
+    echo "*" > "$TMPDIR/.gitignore"
+fi
+
+# Create temp files and declare arrays
+declare -A CHECK_OUT
+declare -A CHECK_PID
+declare -A CHECK_STATUS
+
+for check in "${CHECK_NAMES[@]}"; do
+    CHECK_OUT[$check]=$(mktemp -p "$TMPDIR")
+    CHECK_STATUS[$check]=0
+done
+if [ "${#CHECK_NAMES_2ND[@]}" -gt 0 ]; then
+    for check in "${CHECK_NAMES_2ND[@]}"; do
+        CHECK_OUT[$check]=$(mktemp -p "$TMPDIR")
+        CHECK_STATUS[$check]=0
+    done
+fi
+if [ "${#CHECK_NAMES_3RD[@]}" -gt 0 ]; then
+    for check in "${CHECK_NAMES_3RD[@]}"; do
+        CHECK_OUT[$check]=$(mktemp -p "$TMPDIR")
+        CHECK_STATUS[$check]=0
+    done
+fi
+
+# Cleanup temp files on exit
+trap 'rm -f "${CHECK_OUT[@]}"' EXIT
+
+echo "🔍 Running checks in parallel..."
+
+# Track how many progress lines we print
+PROGRESS_COUNT=0
+
+# Phase 1: Run build and basic checks
+run_checks_phase CHECK_NAMES
+
+# Phase 2: Run link checks only if Phase 1 passed
+if [ "$PASS" == "TRUE" ] && [ "${#CHECK_NAMES_2ND[@]}" -gt 0 ]; then
+    echo ""
+    echo "🔗 Running 2nd round - also in parallel..."
+
+    PROGRESS_COUNT=0
+    run_checks_phase CHECK_NAMES_2ND
+fi
+
+# Phase 3: Run additional checks only if Phase 1 and 2 passed
+if [ "$PASS" == "TRUE" ] && [ "${#CHECK_NAMES_3RD[@]}" -gt 0 ]; then
+    echo ""
+    echo "🔗 Running 3rd round - also in parallel..."
+
+    PROGRESS_COUNT=0
+    run_checks_phase CHECK_NAMES_3RD
+fi
+
+# Report results
+if [ "$PASS" == "TRUE" ]; then
+    echo ""
+    echo "✅ All checks passed"
+    exit 0
+else
+    echo ""
+    for check in "${CHECK_NAMES[@]}"; do
+        show_error "$check"
+    done
+    for check in "${CHECK_NAMES_2ND[@]}"; do
+        show_error "$check"
+    done
+    
+    echo "👉 Fix the issues above before committing."
+    echo "💡 You can run the same checks manually with: '.githooks/pre-commit'"
+    exit 1
+fi

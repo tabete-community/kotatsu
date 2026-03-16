@@ -1,5 +1,6 @@
 <!--
 Inspired by the [it takes a village](https://verifa.io/blog/the-verifa-community-it-takes-a-village/) blog post.
+# cspell:ignore arounds normalising
 -->
 
 ## Why Tabete exists
