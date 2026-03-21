@@ -1,5 +1,5 @@
 ---
-title: blog & updates
+title: Blog & Updates
 description: Quick notes & stories from around the kotatsu.
 permalink: /blog/
 layout: default

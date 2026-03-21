@@ -4,9 +4,9 @@ plugins:
 - jekyll-feed
 - jekyll-seo-tag
 
-title:  "tabete"
+title:  "Tabete"
 header_image: assets/img/mrtabete/inside.png
-description: Tabete is a community of consultants collaborating and sharing ideas. Pull up a seat at our table!
+description: "Tabete is a collective of senior independent consultants in DevOps, automation, infrastructure-as-code and CI/CD."
 
 collections:
   pages:

@@ -1,5 +1,5 @@
 ---
-title: playbook
+title: Playbook
 description: Our way of keeping collaboration hot, focused and tastefully informal.
 permalink: /playbook/
 layout: default
