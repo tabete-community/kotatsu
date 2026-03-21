@@ -2,19 +2,28 @@
 Inspired by the [it takes a village](https://verifa.io/blog/the-verifa-community-it-takes-a-village/) blog post.
 -->
 
-## Why Tabete exists
+## Pull up a seat. We build things that work.
 
-We're a circle of software development consultants who know that sharing time together will hone our craft.
-Having met regularly to talk shop for many years, we've noticed a couple of things:
+Tabete is a circle of senior consultants specialising in DevOps, automation, infrastructure-as-code and Continuous Delivery.
+We like being able to answer simple questions that are surprisingly hard in many organisations; what changed, why, who asked for it and where it is running right now.
+We work hands-on with your teams - improving pipelines, reducing friction between dev and ops and building systems that are solid, observable and satisfying to work in.
+When you engage one of us, you draw on the experience of the whole circle.
 
-### Osmosis is real
+- **Level up your CI/CD, platforms and developer experience** - from fragile, inherited automation to pipelines your team trusts and understands.
+- **Hands-on senior support** - you talk directly with us and we work alongside your engineers; no account layers, no rotating juniors.
+- **Coaching and enablement** - we help teams grow, not just ship a project and disappear.
+- **Hire one, get a team** - every Tabete consultant carries the knowledge and honest perspective of the whole circle.
 
-Simply being around peers lets ideas, perspectives and knowledge cross-pollinate. The conversations and showcases in our meetings aren't just theoretical; they spark inspiration and encourage us to explore implementing fresh ideas in our own clients' environments.
+[We can help you →](/we-can-help-you/)
 
-### A tether prevents tunnel vision
+---
 
-Deep immersion with a client is useful, but it can blur objectivity. Regular check-ins with the community pull us out of the weeds, let us test assumptions with the group and help us spot root causes instead of normalising work-arounds.
+We're also a community of peers. Senior engineers and independent consultants who have been meeting, talking shop and sharpening each other for years.
 
-### Hire one, get a team
+[Around the Kotatsu →](/community/)
 
-When bringing a Tabete consultant on board, you're not getting a lone consultant - you're gaining the reach, ideas and experience of the entire Tabete Community.
+---
+
+Tabete is not a traditional consultancy. We are a small collective of independent consultants who share a brand, a common standard and a genuine community.
+
+[About Tabete →](/crew/)

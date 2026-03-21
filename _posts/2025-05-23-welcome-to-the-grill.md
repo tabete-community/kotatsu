@@ -1,7 +1,7 @@
 ---
 title:  "Welcome to the Grill"
 description: |
-  A quick hello from the Tabete crew and what we’ll be sharing here.
+  A quick hello from the Tabete crew and what we'll be sharing here.
 date:   2025-05-23
 layout: post
 tags:   [tabete, kotatsu]
