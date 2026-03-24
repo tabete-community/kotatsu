@@ -42,7 +42,7 @@ For clients, this means the senior person you engage is running their own busine
 They're connected to other experienced people they trust and consult with regularly.
 You get accountability and reach at the same time.
 
-Have a project you'd like to bring to the table? [Get in touch →](/work-with-us/)
+Have a project you'd like to bring to the table? [Get in touch →](/we-can-help-you/)
 
 ---
 
