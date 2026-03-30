@@ -6,16 +6,21 @@ layout: default
 {% assign profile = site.data.authors[page.author_id] %}
 <h1>{{ profile.name }}</h1>
 <p>
-  {% if profile.linkedin %}
-  <a href="{{ profile.linkedin }}" rel="noopener">
-    <img src="{{ '/assets/img/li-in-bug.png' | relative_url }}" alt="LinkedIn" class="social-icon" style="height: 25px;">
-  </a>
-{% endif %}
-{% if profile.github %}
+  {% if profile.github %}
   <a href="{{ profile.github }}" rel="noopener">
     <img src="{{ '/assets/img/github-mark.png' | relative_url }}" alt="GitHub" class="social-icon" style="height: 25px;">
   </a>
-{% endif %}
+  {% endif %}
+  {% if profile.website %}
+  <a href="{{ profile.website }}" rel="noopener">
+    <img src="{{ '/assets/img/website-icon.png' | relative_url }}" alt="Website" class="social-icon" style="height: 25px;">
+  </a>
+  {% endif %}
+  {% if profile.linkedin %}
+    <a href="{{ profile.linkedin }}" rel="noopener">
+      <img src="{{ '/assets/img/li-in-bug.png' | relative_url }}" alt="LinkedIn" class="social-icon" style="height: 25px;">
+    </a>
+  {% endif %}
 </p>
 
 <p>{{ content }}</p>

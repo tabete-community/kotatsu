@@ -2,16 +2,21 @@ albert:
   name: Albert Rigo
   linkedin: https://www.linkedin.com/in/albertrigo/
   github: https://github.com/kvarak
+  website: https://rigo.consulting
 bosse:
   name: Bosse Nyström
   linkedin: https://www.linkedin.com/in/bossenystrom/
+  github: https://github.com/drBosse
 christian:
   name: Christian Pendleton
   linkedin: https://www.linkedin.com/in/christian-pendleton/
+  github: https://github.com/chopse
 pa:
   name: PA Lundblad
   upcase: "PA"
   linkedin: https://www.linkedin.com/in/per-anders-lundblad/
+  github: https://github.com/pa-lun
 thierry:
   name: Thierry Lacour
   linkedin: https://www.linkedin.com/in/thlac/
+  github: https://github.com/praqma-thi
