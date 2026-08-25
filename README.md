@@ -24,6 +24,12 @@ We're also a community of peers. Senior engineers and independent consultants wh
 
 ---
 
+For startups and small companies, we offer monthly support subscriptions at a heavily rebated rate. Senior technical guidance without handing the work over.
+
+[A little help around the table →](/community-support/)
+
+---
+
 Tabete is not a traditional consultancy. We are a small collective of independent consultants who share a brand, a common standard and a genuine community.
 
 [About Tabete →](/crew/)
