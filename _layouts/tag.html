@@ -1,7 +1,11 @@
 ---
 layout: default
-description: ""
 ---
+
+{%- assign tag_data = site.data.tags[page.tag] -%}
+
+<h1>{{ tag_data.title }}</h1>
+<p>{{ tag_data.description }}</p>
 
 <ul class="post-list">
   {%- for post in site.posts -%}
