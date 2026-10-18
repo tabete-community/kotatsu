@@ -5,7 +5,6 @@ _site/
 .jekyll-cache/
 .sass-cache/
 .jekyll-metadata
-tag/
 
 ########################################
 # Ruby / Bundler

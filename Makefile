@@ -33,7 +33,7 @@ USER_ID    := $(shell id -u)
 GROUP_ID   := $(shell id -g)
 
 # ── Targets ───────────────────────────────────────────────────
-.PHONY: help image generate-tags serve build clean shell
+.PHONY: help image serve build clean shell
 
 # make help the default target
 help: ## Show this help message
@@ -45,11 +45,6 @@ help: ## Show this help message
 image:
 	@echo "▶ Building container $(IMAGE)…"
 	$(DOCKER) build -t $(IMAGE) -f $(DOCKERFILE) .
-
-## Generate tag markdown files from _data/tags.yml
-generate-tags:
-	@echo "▶ Generating tag pages from _data/tags.yml…"
-	@bash scripts/generate-tags.sh
 
 ## Update Gemfile.lock with new dependencies
 lock: image
@@ -67,7 +62,7 @@ lock: image
 				bundle lock --add-platform x86_64-linux arm64-darwin-22"
 
 ## Live-preview the site exactly like GitHub Pages
-serve: generate-tags build
+serve: build
 	@echo "▶ Starting local GitHub Pages preview on port $(PORT)…"
 	$(DOCKER) run --rm \
 		-p $(PORT):$(PORT) \
@@ -77,7 +72,7 @@ serve: generate-tags build
 			--host 0.0.0.0 --port $(PORT)
 
 ## Generate static HTML in ./$(SITE_DIR)
-build: generate-tags image
+build: image
 	@echo "▶ Building static site into $(SITE_DIR)…"
 	$(DOCKER) run --rm \
 		-v $(PWD):/site \
