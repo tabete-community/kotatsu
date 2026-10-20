@@ -28,6 +28,12 @@ We don't show up to impress you; we show up to be useful. If that means asking n
 - Dev and Ops are still siloed, or you have a senior gap and need a steady experienced hand for a while.
 - Your internal developer platform or golden paths are more confusing than helpful - you need someone to make them simpler, safer and actually used.
 
+## Community support for startups
+
+If you're a startup or small company, we offer monthly support subscriptions at 20% of our regular rate. You get senior technical guidance, monthly live sessions and ongoing Discord access - without handing the work over to us.
+
+[A little help around the table →](/community-support/)
+
 ## Get in touch
 
 There is no pitch deck or sales process - just a conversation about what you're working on and whether we're a good fit.
